@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 20:59:32 by kguillem          #+#    #+#             */
-/*   Updated: 2025/03/30 20:47:54 by kguillem         ###   ########.fr       */
+/*   Updated: 2025/04/02 16:34:48 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,17 +64,34 @@ int	pushswap_atoi(char *str)
 	i = 0;
 	if (str[0] == '-')
 		sign = -1;
-	while (ft_isdigit(str[i]) == 0)
+	while (str[i] < '0' || str[i] > '9')
 		i ++;
-	while (ft_isdigit(str[i]) == 1)
+	while (str[i] >= '0' && str[i] <= '9')
 	{
 		res = (res * 10) + (str[i] - 48);
 		i ++;
 	}
 	return (res * sign);
 }
+/*
+void	printintbinary(int num)
+{
+	char	binary[32];
+	int	i;
 
-// doesn t work for negatives numbers precedented by '0'
+	i = 0;
+	while (i < 32)
+	{
+		if ((num << i) & 2147483648)
+			binary[i] = '1';
+		else
+			binary[i] = '0';
+		i ++;
+	}
+	printf("%s\n", binary);
+}
+
+doesn t work for negatives numbers precedented by '0'
 int	noduptrim(char *s1, char *s2)
 {
 	int	i;
@@ -99,8 +116,8 @@ int	noduptrim(char *s1, char *s2)
 		return (printf("Error3\n"));
 	else
 		return (0);
-}
-
+}*/
+/*
 // doesn t work for negatives numbers precedented by '0'
 int	checkduplicates(int argc, char **argv)
 {
@@ -126,10 +143,20 @@ int	checkduplicates(int argc, char **argv)
 			return (6);
 	}
 	return (0);
-}
+}*/
 
 int	main(int argc, char **argv)
 {
+	int	i = 1;
+	int num;
+
+	while (i != argc)
+	{
+		num = pushswap_atoi(argv[i]);
+		printintbinary(num);
+		i++;
+	}
+/*
 	int	a;
 	int	i;
 
@@ -146,5 +173,6 @@ int	main(int argc, char **argv)
 	}
 	a = checkduplicates(argc, argv);
 	printf("%d\n", a);
+*/
 	return (0);
 }
