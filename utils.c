@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "push_swap.h"
 
 int	checksizesign(char *str)
 {
@@ -22,7 +22,7 @@ int	checksizesign(char *str)
 	while ((str[i] != '\0' && i < 12) && (str[i] >= '0' && str[i] <= '9'))
 			i ++;
 	if (str[i] != '\0')
-			return (printf("Error1\n"));
+			return (1);
 	return (0);
 }
 
@@ -46,7 +46,7 @@ int	checkintlimits(char	*str)
 		while (str[i] != '\0')
 		{
 			if (str[i] > check[i])
-				return (printf("Error2\n"));
+				return (1);
 			i ++;
 		}
 	}
@@ -73,106 +73,53 @@ int	pushswap_atoi(char *str)
 	}
 	return (res * sign);
 }
-/*
-void	printintbinary(int num)
-{
-	char	binary[32];
-	int	i;
 
-	i = 0;
-	while (i < 32)
-	{
-		if ((num << i) & 2147483648)
-			binary[i] = '1';
-		else
-			binary[i] = '0';
-		i ++;
-	}
-	printf("%s\n", binary);
-}
-
-doesn t work for negatives numbers precedented by '0'
-int	noduptrim(char *s1, char *s2)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	if (s1[0] == '+')
-		i ++;
-	if (s2[0] == '+')
-		j ++;
-	while (s1[i] == '0')
-		i ++;
-	while (s2[j] == '0')
-		j ++;
-	while (s1[i] == s2[j] && (s1[i] != '\0' || s2[j] != '\0'))
-	{
-		i ++;
-		j ++;
-	}
-	if (s1[i] == '\0' && s2[j] == '\0')
-		return (printf("Error3\n"));
-	else
-		return (0);
-}*/
-/*
-// doesn t work for negatives numbers precedented by '0'
 int	checkduplicates(int argc, char **argv)
 {
 	int	i;
 	int	j;
 
-	i = 1;
-	j = 2;
-	while (j != argc)
+	i = 2;
+	if (argc < 3)
+		return (0);
+	else
 	{
-		if (i == j)
-			i ++;
-		if (i == argc)
+		j = 1;
+		while (i <= argc)
 		{
-			i = 1;
-			j ++;
-		}
-		if (j == argc)
-			break ;
-		if (noduptrim(argv[i], argv[j]) == 0)
+			while (j <= argc)
+			{
+				if (j == i)
+					j ++;
+				else if (pushswap_atoi(argv[i]) == pushswap_atoi(argv[j]))
+					return (1);
+				j ++;
+			}
 			i ++;
-		else
-			return (6);
+		}
 	}
 	return (0);
-}*/
-
-int	main(int argc, char **argv)
+}
+			
+void	checkerror(int argc, char **argv)
 {
-	int	i = 1;
-	int num;
-
-	while (i != argc)
-	{
-		num = pushswap_atoi(argv[i]);
-		printintbinary(num);
-		i++;
-	}
-/*
-	int	a;
 	int	i;
+	int	j;
+	int	res;
 
-	i = 1;
-	if (argc < 3)
-		return (printf("%s\n", argv[argc - 1]));
-	while (i != argc)
+	i = 0;
+	j = 0;
+	res = 0;
+	while (i <= argc)
 	{
-		a = checksizesign(argv[i]) + checkintlimits(argv[i]);
-		printf("%d\n", a);
-		if (a > 0)
-			return (1);
+		res += checksizesign(argv[i]);
+		res += checkintlimits(argv[i]);
 		i ++;
 	}
-	a = checkduplicates(argc, argv);
-	printf("%d\n", a);
-*/
-	return (0);
+	res += checkduplicates(argc, argv);
+	if (res != 0)
+	{
+		ft_printf("Error\n");
+		exit (0);
+	}
 }

@@ -1,0 +1,2 @@
+NAME = push_swap
+
