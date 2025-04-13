@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   list.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/13 17:18:28 by kguillem          #+#    #+#             */
+/*   Updated: 2025/04/13 17:26:54 by kguillem         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 t_node	*listtolast(t_node *list)
@@ -22,7 +34,7 @@ void	listaddtoback(t_node **list, t_node *new)
 		last->next = new;
 }
 
- void	filllist(t_node **list, int argc, char **argv)
+void	filllist(t_node **list, int argc, char **argv)
 {
 	int		i;
 	t_node	*new;
@@ -69,5 +81,3 @@ int	countnodes(t_node *list)
 	}
 	return (i);
 }
-
-

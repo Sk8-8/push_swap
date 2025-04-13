@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 20:59:32 by kguillem          #+#    #+#             */
-/*   Updated: 2025/04/02 16:34:48 by kguillem         ###   ########.fr       */
+/*   Updated: 2025/04/13 17:25:52 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@ int	checksizesign(char *str)
 	if (str[0] == '+' || str[0] == '-')
 		i ++;
 	while ((str[i] != '\0' && i < 12) && (str[i] >= '0' && str[i] <= '9'))
-			i ++;
+		i ++;
 	if (str[i] != '\0')
-			return (1);
+		return (1);
 	return (0);
 }
 
 int	checkintlimits(char	*str)
 {
 	char	*check;
-	int	i;
+	int		i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -100,7 +100,7 @@ int	checkduplicates(int argc, char **argv)
 	}
 	return (0);
 }
-			
+
 void	checkerror(int argc, char **argv)
 {
 	int	i;

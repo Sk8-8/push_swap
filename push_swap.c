@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 21:41:59 by kguillem          #+#    #+#             */
-/*   Updated: 2025/02/12 21:42:04 by kguillem         ###   ########.fr       */
+/*   Updated: 2025/04/13 17:21:51 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	radix(t_node **a, t_node **b, int i)
 		if (!(ptr & (1 << i)))
 			pushnode(a, b, 2);
 		else
-			rotatenode(a,1);
+			rotatenode(a, 1);
 		n --;
 	}
 	while (*b)
@@ -45,7 +45,7 @@ void	radix(t_node **a, t_node **b, int i)
 void	sort(t_node **a)
 {
 	t_node	*b;
-	int			i;
+	int		i;
 
 	b = NULL;
 	i = 0;

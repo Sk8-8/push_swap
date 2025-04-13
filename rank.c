@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rank.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/13 17:19:58 by kguillem          #+#    #+#             */
+/*   Updated: 2025/04/13 17:27:35 by kguillem         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	swap(int *a, int *b)
@@ -37,9 +49,9 @@ void	error(void)
 void	bubblesortindex(t_node *stack)
 {
 	t_node	*tmp;
-	int	i;
-	int	j;
-	int	*tab;
+	int		i;
+	int		j;
+	int		*tab;
 
 	tab = malloc(sizeof(int) * countnodes(stack));
 	if (!tab)

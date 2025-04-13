@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 21:42:13 by kguillem          #+#    #+#             */
-/*   Updated: 2025/02/12 21:42:15 by kguillem         ###   ########.fr       */
+/*   Updated: 2025/04/13 18:00:05 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@
 # include "ft_printf/ft_printf.h"
 # include <stdlib.h>
 
-typedef	struct s_node
+typedef struct s_node
 {
-
-	int		val;
-	int		index;
-	struct	s_node	*next;
+	int				val;
+	int				index;
+	struct s_node	*next;
 }	t_node;
 
 t_node	*listtolast(t_node *list);
@@ -40,13 +39,13 @@ void	raddix(t_node **a, t_node **b, int i);
 void	sort(t_node **a);
 void	error(void);
 void	radix(t_node **a, t_node **b, int i);
-int	countnodes(t_node *list);
-int	checksizesign(char *str);
-int	checkintlimits(char *str);
-int	pushswap_atoi(char *str);
-int	checkduplicates(int argc, char **argv);
-int	indextab(int *tab, int val);
-int	sortedcheck(t_node *a);
-int	main(int argc, char **argv);
+int		countnodes(t_node *list);
+int		checksizesign(char *str);
+int		checkintlimits(char *str);
+int		pushswap_atoi(char *str);
+int		checkduplicates(int argc, char **argv);
+int		indextab(int *tab, int val);
+int		sortedcheck(t_node *a);
+int		main(int argc, char **argv);
 
 #endif//PUSH_SWAP_H
