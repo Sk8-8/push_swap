@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 17:19:15 by kguillem          #+#    #+#             */
-/*   Updated: 2025/04/13 17:20:37 by kguillem         ###   ########.fr       */
+/*   Updated: 2025/04/13 22:36:10 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	pushnode(t_node **a, t_node **b, int state)
 		*a = (*a)->next;
 		tmp->next = *b;
 		*b = tmp;
-		ft_printf("pa\n");
+		ft_printf("pb\n");
 	}
 }
 
