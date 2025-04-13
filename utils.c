@@ -79,24 +79,21 @@ int	checkduplicates(int argc, char **argv)
 	int	i;
 	int	j;
 
-	i = 2;
-	if (argc < 3)
-		return (0);
-	else
+	i = 1;	
+	while (i < argc)
 	{
 		j = 1;
-		while (i <= argc)
+		while (j < argc)
 		{
-			while (j <= argc)
-			{
-				if (j == i)
-					j ++;
-				else if (pushswap_atoi(argv[i]) == pushswap_atoi(argv[j]))
-					return (1);
+			if (j == i)
 				j ++;
-			}
-			i ++;
+			if (j == argc)
+				break ;
+			if (pushswap_atoi(argv[j]) == pushswap_atoi(argv[i]))
+				return (1);
+			j ++;
 		}
+		i ++;
 	}
 	return (0);
 }
@@ -106,12 +103,11 @@ void	checkerror(int argc, char **argv)
 	int	i;
 	int	res;
 
-	i = 0;
+	i = 2;
 	res = 0;
 	while (i <= argc)
 	{
-		res += checksizesign(argv[i]);
-		res += checkintlimits(argv[i]);
+		res += (checksizesign(argv[i - 1]) + checkintlimits(argv[i - 1]));
 		i ++;
 	}
 	res += checkduplicates(argc, argv);
