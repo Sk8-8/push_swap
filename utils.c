@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 20:59:32 by kguillem          #+#    #+#             */
-/*   Updated: 2025/04/13 17:25:52 by kguillem         ###   ########.fr       */
+/*   Updated: 2025/04/13 18:57:34 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,11 +104,9 @@ int	checkduplicates(int argc, char **argv)
 void	checkerror(int argc, char **argv)
 {
 	int	i;
-	int	j;
 	int	res;
 
 	i = 0;
-	j = 0;
 	res = 0;
 	while (i <= argc)
 	{
