@@ -28,7 +28,7 @@ void	pushnode(t_node **a, t_node **b, int state)
 
 	if (state == 1)
 	{
-		if (state == 0)
+		if (countnodes(*b) == 0)
 			return ;
 		tmp = *b;
 		*b = (*b)->next;
@@ -42,8 +42,8 @@ void	pushnode(t_node **a, t_node **b, int state)
 			return ;
 		tmp = *a;
 		*a = (*a)->next;
-		tmp->next = *a;
-		*a = tmp;
+		tmp->next = *b;
+		*b = tmp;
 		ft_printf("pa\n");
 	}
 }
