@@ -42,18 +42,24 @@ void	radix(t_node **a, t_node **b, int i)
 		pushnode(a, b, 1);
 }
 
-void	sort(t_node **a)
+void	sort(t_node **a, int state)
 {
 	t_node	*b;
 	int		i;
 
 	b = NULL;
 	i = 0;
-	while (!sortedcheck(*a))
+	if (state == 0)
 	{
-		radix(a, &b, i);
-		i ++;
+		while (!sortedcheck(*a))
+		{
+			radix(a, &b, i);
+			i ++;
+		}
 	}
+	else
+		five(a, &b);
+
 }
 
 int	main(int argc, char **argv)
@@ -66,7 +72,10 @@ int	main(int argc, char **argv)
 	checkerror(argc, argv);
 	filllist(&a, argc, argv);
 	bubblesortindex(a);
-	sort(&a);
+	if (argc <= 6)
+		sort(&a, 1);
+	else
+		sort(&a, 0);
 	freelist(&a);
 	return (0);
 }
