@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 21:42:13 by kguillem          #+#    #+#             */
-/*   Updated: 2025/04/13 18:00:05 by kguillem         ###   ########.fr       */
+/*   Updated: 2025/05/01 22:19:54 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,12 @@ void	pushnode(t_node **a, t_node **b, int state);
 void	rotatenode(t_node **a, int state);
 void	reverserotatenode(t_node **a, int state);
 void	raddix(t_node **a, t_node **b, int i);
-void	sort(t_node **a);
+void	sort(t_node **a, int state);
 void	error(void);
 void	three(t_node *a);
-void	five(t_node **a, t_node **b);
+void	five(t_node **a, t_node **b, int argc);
 void	radix(t_node **a, t_node **b, int i);
+void	swap_b(t_node *b);
 int		get_greater(t_node *a);
 int		countnodes(t_node *list);
 int		checksizesign(char *str);

@@ -6,11 +6,11 @@
 #    By: kguillem <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/13 17:19:01 by kguillem          #+#    #+#              #
-#    Updated: 2025/04/13 18:54:51 by kguillem         ###   ########.fr        #
+#    Updated: 2025/05/01 22:27:20 by kguillem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = push_swap.c list.c rank.c utils.c moves.c
+SRC = push_swap.c list.c rank.c utils.c moves.c lownumsort.c
 
 OBJS = ${SRC:.c=.o}
 

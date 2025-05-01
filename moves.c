@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 17:19:15 by kguillem          #+#    #+#             */
-/*   Updated: 2025/04/13 22:36:10 by kguillem         ###   ########.fr       */
+/*   Updated: 2025/05/01 21:28:27 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,16 @@ void	swapfirstnode(t_node *a)
 	a->val = a->next->val;
 	a->next->val = tmp;
 	ft_printf("sa\n");
+}
+
+void	swap_b(t_node *b)
+{
+	int	tmp;
+
+	tmp = b->val;
+	b->val = b->next->val;
+	b->next->val = tmp;
+	ft_printf("sb\n");
 }
 
 void	pushnode(t_node **a, t_node **b, int state)

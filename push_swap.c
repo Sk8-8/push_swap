@@ -6,10 +6,9 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 21:41:59 by kguillem          #+#    #+#             */
-/*   Updated: 2025/04/13 17:21:51 by kguillem         ###   ########.fr       */
+/*   Updated: 2025/05/01 22:20:39 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "push_swap.h"
 
 int	sortedcheck(t_node *a)
@@ -49,7 +48,17 @@ void	sort(t_node **a, int state)
 
 	b = NULL;
 	i = 0;
-	if (state == 0)
+	if (state == 6 || state == 5)
+	{
+		if (!sortedcheck(*a))
+			five(a, &b, state);
+	}
+	else if (state == 4 || state == 3)
+	{
+		if (!sortedcheck(*a))
+			three(*a);
+	}
+	else
 	{
 		while (!sortedcheck(*a))
 		{
@@ -57,9 +66,6 @@ void	sort(t_node **a, int state)
 			i ++;
 		}
 	}
-	else
-		five(a, &b);
-
 }
 
 int	main(int argc, char **argv)
@@ -73,7 +79,7 @@ int	main(int argc, char **argv)
 	filllist(&a, argc, argv);
 	bubblesortindex(a);
 	if (argc <= 6)
-		sort(&a, 1);
+		sort(&a, argc);
 	else
 		sort(&a, 0);
 	freelist(&a);
