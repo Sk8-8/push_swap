@@ -6,7 +6,7 @@
 #    By: kguillem <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/13 17:19:01 by kguillem          #+#    #+#              #
-#    Updated: 2025/05/01 22:27:20 by kguillem         ###   ########.fr        #
+#    Updated: 2025/05/02 15:29:39 by kguillem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,14 +33,14 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 		@make -C ft_printf
-		$(CC) $(CCFLAGS) -g $(OBJS) ft_printf/libftprintf.a ft_printf/libft/libft.a -o pushswap
+		$(CC) $(CCFLAGS) -g $(OBJS) ft_printf/libftprintf.a ft_printf/libft/libft.a -o push_swap
 
 clean:
 		$(RM) $(OBJS)
 		@make -C ft_printf clean
 
 fclean: clean
-		$(RM) pushswap
+		$(RM) push_swap
 		@make -C ft_printf fclean
 re: fclean all
 
