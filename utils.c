@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 20:59:32 by kguillem          #+#    #+#             */
-/*   Updated: 2025/04/13 22:39:12 by kguillem         ###   ########.fr       */
+/*   Updated: 2025/05/03 18:31:14 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,38 +26,30 @@ int	checksizesign(char *str)
 	return (0);
 }
 
-int	checkintlimits(char	*str)
+int	checkintlimits(long num)
 {
-	char	*check;
-	int		i;
+	long	check;
 
-	i = 0;
-	while (str[i] != '\0')
-		i ++;
-	if (str[0] == '-')
-		check = "-2147483648";
-	if (str[0] == '+')
-		check = "+2147483647";
-	else
-		check = "2147483647";
-	if (i > 9)
+	if (num < 0)
 	{
-		i = 0;
-		while (str[i] != '\0')
-		{
-			if (str[i] > check[i])
-				return (1);
-			i ++;
-		}
+		check = -2147483648;
+		if (num < check)
+			return (1);
+	}
+	else
+	{
+		check = 2147483647;
+		if (num > check)
+			return (1);
 	}
 	return (0);
 }
 
-int	pushswap_atoi(char *str)
+long	lval(char *str)
 {
-	int	sign;
-	int	res;
-	int	i;
+	long	sign;
+	long	res;
+	int		i;
 
 	sign = 1;
 	res = 0;
@@ -89,7 +81,7 @@ int	checkduplicates(int argc, char **argv)
 				j ++;
 			if (j == argc)
 				break ;
-			if (pushswap_atoi(argv[j]) == pushswap_atoi(argv[i]))
+			if (lval(argv[j]) == lval(argv[i]))
 				return (1);
 			j ++;
 		}
@@ -107,7 +99,7 @@ void	checkerror(int argc, char **argv)
 	res = 0;
 	while (i <= argc)
 	{
-		res += (checksizesign(argv[i - 1]) + checkintlimits(argv[i - 1]));
+		res += (checksizesign(argv[i - 1]) + checkintlimits(lval(argv[i - 1])));
 		i ++;
 	}
 	res += checkduplicates(argc, argv);

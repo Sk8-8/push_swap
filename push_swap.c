@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 21:41:59 by kguillem          #+#    #+#             */
-/*   Updated: 2025/05/01 22:20:39 by kguillem         ###   ########.fr       */
+/*   Updated: 2025/05/03 18:24:48 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -56,7 +56,7 @@ void	sort(t_node **a, int state)
 	else if (state == 4 || state == 3)
 	{
 		if (!sortedcheck(*a))
-			three(*a);
+			three(a);
 	}
 	else
 	{

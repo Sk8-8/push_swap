@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 18:52:39 by kguillem          #+#    #+#             */
-/*   Updated: 2025/05/01 22:24:39 by kguillem         ###   ########.fr       */
+/*   Updated: 2025/05/03 14:59:19 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -25,17 +25,17 @@ int	get_greater(t_node *a)
 	return (max);
 }
 
-void	three(t_node *a)
+void	three(t_node **a)
 {
 	int	greater;
 
-	greater = get_greater(a);
-	if (a->index == greater)
-		rotatenode(&a, 1);
-	else if (a->next->index == greater)
-		reverserotatenode(&a, 1);
-	if (a->index > a->next->index)
-		swapfirstnode(a);
+	greater = get_greater(*a);
+	if ((*a)->index == greater)
+		rotatenode(a, 1);
+	else if ((*a)->next->index == greater)
+		reverserotatenode(a, 1);
+	if ((*a)->index > (*a)->next->index)
+		swapfirstnode(*a);
 }
 
 void	five(t_node **a, t_node **b, int argc)

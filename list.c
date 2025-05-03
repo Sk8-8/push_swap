@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 17:18:28 by kguillem          #+#    #+#             */
-/*   Updated: 2025/04/13 17:26:54 by kguillem         ###   ########.fr       */
+/*   Updated: 2025/05/03 18:32:10 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	filllist(t_node **list, int argc, char **argv)
 		new = malloc(sizeof(t_node));
 		if (!new)
 			return ;
-		new->val = pushswap_atoi(argv[i]);
+		new->val = (int)lval(argv[i]);
 		new->next = NULL;
 		new->index = i;
 		listaddtoback(list, new);
