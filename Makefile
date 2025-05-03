@@ -6,7 +6,7 @@
 #    By: kguillem <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/13 17:19:01 by kguillem          #+#    #+#              #
-#    Updated: 2025/05/03 14:45:53 by kguillem         ###   ########.fr        #
+#    Updated: 2025/05/03 19:12:06 by kguillem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ OBJS = ${SRC:.c=.o}
 %.o: %.c
 		$(CC) $(CPPFLAGS) $(CCFLAGS) -o $@ -c $<
 
-NAME = push_swap.a
+NAME = push_swap
 
 CC = gcc
 
